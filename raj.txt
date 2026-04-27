@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Premium Step Betting Calculator</title>
+
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #0f172a, #1e293b);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+
+  .container {
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(10px);
+    padding: 25px;
+    border-radius: 15px;
+    width: 340px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.4);
+    color: white;
+    border: 1px solid rgba(255,255,255,0.1);
+  }
+
+  .promo {
+    text-align: center;
+    font-weight: bold;
+    color: #ff4d4d;
+    margin-bottom: 10px;
+    animation: blink 1.5s infinite;
+  }
+
+  @keyframes blink {
+    0% {opacity: 1;}
+    50% {opacity: 0.4;}
+    100% {opacity: 1;}
+  }
+
+  h2 {
+    text-align: center;
+    margin-bottom: 15px;
+    color: #00d4ff;
+  }
+
+  label {
+    font-size: 14px;
+    color: #cbd5e1;
+  }
+
+  input {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+  }
+
+  button {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(90deg,#00d4ff,#0077ff);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+  }
+
+  button:hover {
+    transform: scale(1.05);
+  }
+
+  .result {
+    margin-top: 15px;
+    font-size: 18px;
+    text-align: center;
+    font-weight: bold;
+    color: #22c55e;
+  }
+
+  .footer {
+    margin-top: 15px;
+    text-align: center;
+    font-size: 13px;
+  }
+
+  .footer a {
+    color: #38bdf8;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  .footer a:hover {
+    text-decoration: underline;
+  }
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <!-- Profile Image -->
+  <div style="text-align:center; margin-bottom:10px;">
+    <img src="https://i.postimg.cc/MGTZVzNh/1000158710.jpg"
+         alt="Profile"
+         style="width:90px; height:90px; border-radius:50%; border:2px solid #00d4ff; object-fit:cover;">
+  </div>
+
+  <div class="promo">
+    🔥 Promoted by ✈️ 
+    <a href="https://t.me/raj150k" target="_blank" rel="noopener noreferrer"
+       style="color:#ff4d4d; text-decoration:none; font-weight:bold;">
+      @raj150k
+    </a> 🔥
+  </div>
+
+  <h2>Step Betting Calculator</h2>
+
+  <label>Money (1 - 10000)</label>
+  <input type="number" id="money" min="1" max="10000" placeholder="Enter money" />
+
+  <label>Step (1 - 100)</label>
+  <input type="number" id="step" min="1" max="100" placeholder="Enter step" />
+
+  <button onclick="calculate()">Calculate</button>
+
+  <div class="result" id="result"></div>
+
+  <div class="footer">
+    Restriction link :
+    <a href="https://hgnice.cc/#/register?invitationCode=177831919125"
+       target="_blank" rel="noopener noreferrer">
+      Click Here
+    </a>
+  </div>
+
+</div>
+
+<script>
+function calculate() {
+  let money = parseFloat(document.getElementById('money').value);
+  let step = parseInt(document.getElementById('step').value);
+
+  if (!money || !step || step < 1) {
+    document.getElementById('result').innerText = "Please enter valid values";
+    return;
+  }
+
+  let divisor = Math.pow(2, step - 1);
+  let bit = money / divisor;
+
+  document.getElementById('result').innerText =
+    "Bit Value: " + bit.toFixed(2) + " Tk";
+}
+</script>
+
+</body>
+</html>
